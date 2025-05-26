@@ -17,7 +17,14 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [dashboardLoading, setDashboardLoading] = useState(false);
 
-  const useridFromLocalStorage = typeof window !== "undefined" ? localStorage.getItem("USER_ID")?.slice(1, -1) : undefined;
+ const [useridFromLocalStorage, setUseridFromLocalStorage] = useState<string | undefined>(undefined);
+
+useEffect(() => {
+  const id = localStorage.getItem("USER_ID");
+  if (id) {
+    setUseridFromLocalStorage(id.slice(1, -1));
+  }
+}, []);
   const userID = userData?.user?.id || useridFromLocalStorage;
   console.log('userID from localStorage: ', useridFromLocalStorage)
   console.log('userID from Redux: ', userData?.user?.id)
