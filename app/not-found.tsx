@@ -1,9 +1,12 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { buttonVariants } from "@/components/ui/button";
-import Lottie from "lottie-react";
 import Link from "next/link";
 import animationData from "./lotties/404.json";
+
+// Dynamically import Lottie with SSR disabled
+const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
 export default function NotFound() {
   return (
