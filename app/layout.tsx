@@ -1,3 +1,5 @@
+"use client";
+
 import "@/styles/globals.css";
 import { cn } from "@/lib";
 import { generateMetadata } from "./utils/index";
