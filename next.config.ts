@@ -1,22 +1,17 @@
-// next.config.js
+// next.config.ts
 
-/** @type {import('next').NextConfig} */
-const nextConfig = {
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
   images: {
-    domains: ['images.unsplash.com'], // ✅ Add this line
+    domains: ['images.unsplash.com'],
   },
-
-    typescript: {
-
+  typescript: {
     ignoreBuildErrors: true,
   },
-
-    eslint: {
-
+  eslint: {
     ignoreDuringBuilds: true,
-  }
-};
+  },
+}
 
-
-
-module.exports = nextConfig;
+export default nextConfig
